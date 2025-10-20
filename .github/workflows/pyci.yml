@@ -21,6 +21,11 @@ jobs:
       - name: Run linter
         run: |
           make check
+      - name: Install dependencies
+        run: |
+          pip install pytest
+          pip install pytest-cov
+          pip install -r requirements.txt
       - name: Run pytest
         run: |
           make test
