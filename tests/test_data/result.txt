@@ -1,0 +1,12 @@
+{
+  - active: True
+  + active: False
+  - age: 28
+  + age: 38
+    city: Kirov
+  + email: anna@example.com
+  - hobbies: ['reading', 'video games']
+  + hobbies: ['reading', 'photography']
+  - name: Anna
+  + name: Anna Myshkina
+}
