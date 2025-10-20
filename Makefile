@@ -17,8 +17,5 @@ check:
 test:
 	uv run pytest
 
-coverage-install:
-	pip install pytest-cov
-
 test-coverage:
-	uv run pytest --cov=gendiff --cov-report xml
+	pytest -p pytest_cov --cov=gendiff --cov-report=xml
