@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+
 from gendiff.find_diff import generate_diff
 
 
@@ -20,17 +21,20 @@ def test_json_diff():
 
     assert result == expected
 
+
 def test_key_only_in_first():
     data1 = {'key1': 'value1'}
     data2 = {}
     expected = "{\n  - key1: value1\n}"
     assert generate_diff(data1, data2) == expected
 
+
 def test_key_only_in_second():
     data1 = {}
     data2 = {'key1': 'value1'}
     expected = "{\n  + key1: value1\n}"
     assert generate_diff(data1, data2) == expected
+
 
 def test_identical_keys():
     data1 = {'key1': 'value1'}
