@@ -11,3 +11,4 @@ coverage.xml
 *.cast
 main.py
 .idea/
+htmlcov/
