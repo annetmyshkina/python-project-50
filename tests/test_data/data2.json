@@ -1,0 +1,8 @@
+{
+  "name": "Anna Myshkina",
+  "age": 38,
+  "city": "Kirov",
+  "email": "anna@example.com",
+  "hobbies": ["reading", "photography"],
+  "active": false
+}

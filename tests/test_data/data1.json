@@ -1,0 +1,7 @@
+{
+  "name": "Anna",
+  "age": 28,
+  "city": "Kirov",
+  "hobbies": ["reading", "video games"],
+  "active": true
+}
