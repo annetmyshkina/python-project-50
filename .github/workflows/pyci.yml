@@ -30,6 +30,5 @@ jobs:
           make test
       - name: Check pytest plugins
         run: pytest --trace-config
-      - name: Run test coverage
-        run: |
-          make test-coverage
+      - name: Run tests with coverage
+        run: python -m pytest --cov=gendiff --cov-report=xml
