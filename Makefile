@@ -4,11 +4,18 @@ install:
 build:
 	uv build
 
-package-install:
-	uv tool install dist/*.whl
+run:
+	uv run gendiff data/file1.json data/file2.json
 
-package-reinstall:
+
+reinstall:
 	uv tool install --force dist/hexlet_code-0.1.0-py3-none-any.whl
 
-lint:
+check:
 	uv run ruff check gendiff
+
+test:
+	uv run pytest
+
+test-coverage:
+	pytest --cov=gendiff --cov-report=term-missing
