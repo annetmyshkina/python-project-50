@@ -25,5 +25,9 @@ dev = [
     "ruff>=0.12.12",
 ]
 
+[tool.pytest.ini_options]
+addopts = "--cov=gendiff --cov-report=xml"
+
+
 [project.scripts]
 gendiff = "gendiff.scripts.gendiff:main"
