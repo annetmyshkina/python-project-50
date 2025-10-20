@@ -30,4 +30,4 @@ jobs:
         run: pytest --trace-config
 
       - name: Run tests with coverage
-        run: python -m pytest --cov=gendiff --cov-report=xml
+        run: make test-coverage
