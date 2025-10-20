@@ -18,4 +18,4 @@ test:
 	uv run pytest
 
 test-coverage:
-	pytest --cov=gendiff --cov-report=term-missing
+	uv run pytest --cov=gendiff --cov-report xml
