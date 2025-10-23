@@ -39,7 +39,3 @@ def stylish(tree_diff, depth=0):
             lines.append(f"{indent}    {key}: {val}")
     lines.append(f"{indent}}}")
     return '\n'.join(lines)
-
-
-def plain(tree_diff, depth=0):
-    pass
