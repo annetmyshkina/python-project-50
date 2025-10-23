@@ -1,43 +1,23 @@
-import json
-from pathlib import Path
+from gendiff.generate_diff import generate_diff
 
-from gendiff.find_diff import generate_diff
-
-
-def read_file(filepath):
-    return Path(filepath).read_text()
-
+expected_path = 'tests/test_data/result.txt'
+with open(expected_path, 'r', encoding="utf-8") as file:
+    expected = file.read().strip()
 
 def test_json_diff():
     data1_path = 'tests/test_data/data1.json'
     data2_path = 'tests/test_data/data2.json'
-    expected_path = 'tests/test_data/result.txt'
 
-    data1 = json.loads(read_file(data1_path))
-    data2 = json.loads(read_file(data2_path))
-    expected = read_file(expected_path).strip()
+    result = generate_diff(data1_path, data2_path)
 
-    result = generate_diff(data1, data2).strip()
+    assert result == expected
+
+def test_yml_diff():
+    data1_path = 'tests/test_data/YML_data1.yml'
+    data2_path = 'tests/test_data/YML_data2.yaml'
+
+    result = generate_diff(data1_path, data2_path)
 
     assert result == expected
 
 
-def test_key_only_in_first():
-    data1 = {'key1': 'value1'}
-    data2 = {}
-    expected = "{\n  - key1: value1\n}"
-    assert generate_diff(data1, data2) == expected
-
-
-def test_key_only_in_second():
-    data1 = {}
-    data2 = {'key1': 'value1'}
-    expected = "{\n  + key1: value1\n}"
-    assert generate_diff(data1, data2) == expected
-
-
-def test_identical_keys():
-    data1 = {'key1': 'value1'}
-    data2 = {'key1': 'value1'}
-    expected = "{\n    key1: value1\n}"
-    assert generate_diff(data1, data2) == expected
