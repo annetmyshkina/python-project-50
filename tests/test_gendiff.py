@@ -4,6 +4,7 @@ expected_path = 'tests/test_data/result.txt'
 with open(expected_path, 'r', encoding="utf-8") as file:
     expected = file.read().strip()
 
+
 def test_json_diff():
     data1_path = 'tests/test_data/data1.json'
     data2_path = 'tests/test_data/data2.json'
@@ -11,6 +12,7 @@ def test_json_diff():
     result = generate_diff(data1_path, data2_path)
 
     assert result == expected
+
 
 def test_yml_diff():
     data1_path = 'tests/test_data/YML_data1.yml'

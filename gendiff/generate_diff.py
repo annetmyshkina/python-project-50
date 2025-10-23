@@ -1,9 +1,11 @@
 import json
-import yaml
 import os
 
+import yaml
+
 from gendiff.build_diff import build_diff
-from gendiff.formatters import stylish, plain
+from gendiff.formatters import plain, stylish
+
 
 def reader_file(filepath):
     extension = os.path.splitext(filepath)[1].lower()
@@ -14,6 +16,7 @@ def reader_file(filepath):
             return json.load(f)
         else:
             raise ValueError(f'Unsupported file format {extension}')
+
 
 def generate_diff(filepath1, filepath2, format_name='stylish'):
     data1 = reader_file(filepath1)
