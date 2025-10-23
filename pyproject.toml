@@ -23,6 +23,7 @@ dev = [
     "pytest>=8.4.2",
     "pytest-cov>=4.0.0",
     "ruff>=0.12.12",
+    "pyyaml",
 ]
 
 [tool.pytest.ini_options]
