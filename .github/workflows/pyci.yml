@@ -20,7 +20,7 @@ jobs:
           make install
           python -m pip install --upgrade pip
           pip install pytest pytest-cov
-          pip install -r requirements.txt
+          pip install pyyaml pytest
       - name: Run linter
         run: |
           make check
@@ -28,6 +28,8 @@ jobs:
         run: |
           make test
       - name: Check pytest plugins
-        run: pytest --trace-config
+        run: |
+          pytest --trace-config
       - name: Run tests with coverage
-        run: python -m pytest --cov=gendiff --cov-report=xml
+        run: |
+          python -m pytest --cov=gendiff --cov-report=xml
