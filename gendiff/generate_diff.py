@@ -4,7 +4,8 @@ import os
 import yaml
 
 from gendiff.build_diff import build_diff
-from gendiff.formatters import plain, stylish
+from gendiff.formatters.stylish import stylish
+from gendiff.formatters.plain import plain
 
 
 def reader_file(filepath):
