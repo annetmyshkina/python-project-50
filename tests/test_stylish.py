@@ -1,5 +1,7 @@
 from gendiff.generate_diff import generate_diff
 
+
+
 expected_path = 'tests/test_data/result.txt'
 with open(expected_path, 'r', encoding="utf-8") as file:
     expected = file.read().strip()
@@ -11,7 +13,9 @@ def test_json_diff():
 
     result = generate_diff(data1_path, data2_path, format_name='stylish')
 
+    assert isinstance(result, str)
     assert result == expected
+    assert len(result) > 0
 
 
 def test_yml_diff():
@@ -20,6 +24,6 @@ def test_yml_diff():
 
     result = generate_diff(data1_path, data2_path, format_name='stylish')
 
+    assert isinstance(result, str)
     assert result == expected
-
-
+    assert len(result) > 0
