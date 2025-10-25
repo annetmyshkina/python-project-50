@@ -14,14 +14,14 @@ def to_str(value, depth):
         return str(value)
 
 
-def stylish(tree_diff, depth=0):
+def get_stylish(tree_diff, depth=0):
     lines = ['{']
     indent = ' ' * (depth * 4)
     for item in tree_diff:
         key = item["key"]
         status = item["status"]
         if status == "nested":
-            children = stylish(item["children"], depth + 1)
+            children = get_stylish(item["children"], depth + 1)
             lines.append(f'{indent}    {key}: {children}')
         elif status == 'added':
             value = to_str(item['value'], depth + 1)
