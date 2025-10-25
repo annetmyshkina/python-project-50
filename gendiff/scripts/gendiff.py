@@ -6,7 +6,8 @@ def main():
     args = parser_args()
     data1 = args.first_file
     data2 = args.second_file
-    diff = generate_diff(data1, data2, format_name='stylish')
+    format_name = args.format
+    diff = generate_diff(data1, data2, format_name)
     print(diff)
 
 
