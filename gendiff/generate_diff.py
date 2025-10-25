@@ -4,6 +4,7 @@ import os
 import yaml
 
 from gendiff.build_diff import build_diff
+from gendiff.formatters.json import get_json
 from gendiff.formatters.plain import get_plain
 from gendiff.formatters.stylish import get_stylish
 
@@ -27,6 +28,7 @@ def generate_diff(filepath1, filepath2, format_name):
     formatters = {
         "stylish": get_stylish,
         "plain": get_plain,
+        "json": get_json
     }
 
     formater = formatters.get(format_name, get_stylish)
