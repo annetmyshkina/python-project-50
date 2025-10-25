@@ -4,8 +4,8 @@ import os
 import yaml
 
 from gendiff.build_diff import build_diff
-from gendiff.formatters.plain import plain
-from gendiff.formatters.stylish import stylish
+from gendiff.formatters.plain import get_plain
+from gendiff.formatters.stylish import get_stylish
 
 
 def reader_file(filepath):
@@ -19,15 +19,15 @@ def reader_file(filepath):
             raise ValueError(f'Unsupported file format {extension}')
 
 
-def generate_diff(filepath1, filepath2, format_name='stylish'):
+def generate_diff(filepath1, filepath2, format_name):
     data1 = reader_file(filepath1)
     data2 = reader_file(filepath2)
     tree_diff = build_diff(data1, data2)
 
     formatters = {
-        "stylish": stylish,
-        "plain": plain,
+        "stylish": get_stylish,
+        "plain": get_plain,
     }
 
-    formater = formatters.get(format_name, stylish)
+    formater = formatters.get(format_name, get_stylish)
     return formater(tree_diff)
