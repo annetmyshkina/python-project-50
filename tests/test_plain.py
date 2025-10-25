@@ -11,7 +11,9 @@ def test_json_diff():
 
     result = generate_diff(data1_path, data2_path, format_name='plain')
 
+    assert isinstance(result, str)
     assert result == expected
+    assert len(result) > 0
 
 
 def test_yml_diff():
@@ -20,4 +22,6 @@ def test_yml_diff():
 
     result = generate_diff(data1_path, data2_path, format_name='plain')
 
+    assert isinstance(result, str)
     assert result == expected
+    assert len(result) > 0
