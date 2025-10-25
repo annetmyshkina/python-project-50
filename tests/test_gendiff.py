@@ -9,7 +9,7 @@ def test_json_diff():
     data1_path = 'tests/test_data/data1.json'
     data2_path = 'tests/test_data/data2.json'
 
-    result = generate_diff(data1_path, data2_path)
+    result = generate_diff(data1_path, data2_path, format_name='stylish')
 
     assert result == expected
 
@@ -18,7 +18,7 @@ def test_yml_diff():
     data1_path = 'tests/test_data/YML_data1.yml'
     data2_path = 'tests/test_data/YML_data2.yaml'
 
-    result = generate_diff(data1_path, data2_path)
+    result = generate_diff(data1_path, data2_path, format_name='stylish')
 
     assert result == expected
 
