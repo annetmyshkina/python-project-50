@@ -6,7 +6,10 @@ def to_str(value):
     elif isinstance(value, bool):
         return str(value).lower()
     else:
-        return f"'{str(value)}'"
+        if isinstance(value, str):
+            return f"'{value}'"
+        else:
+            return value
 
 
 def get_plain(tree_diff, full_path=None):
