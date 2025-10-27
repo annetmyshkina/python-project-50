@@ -52,9 +52,22 @@ from gendiff.build_diff import build_diff
                 {"key4": {"k1": 3, "k2": 4}},
             [
                {
-                    "key": "key4", "status": "nested", "children": [
-                        {"key": "k1", "status": "changed", "old_value": 1, "new_value": 3},
-                        {"key": "k2", "status": "changed", "old_value": 2, "new_value": 4}
+                   "key": "key4",
+                   "status": "nested",
+                   "children":
+                    [
+                        {
+                            "key": "k1",
+                            "status": "changed",
+                            "old_value": 1,
+                            "new_value": 3
+                        },
+                        {
+                            "key": "k2",
+                            "status": "changed",
+                            "old_value": 2,
+                            "new_value": 4
+                        }
                     ]
                 }
             ]
@@ -63,7 +76,11 @@ from gendiff.build_diff import build_diff
                 {"key5": {"k1": 1, "k2": 2}},
                 {},
                 [
-                    {"key": "key5", "status": "deleted", "value": {"k1": 1, "k2": 2}}
+                    {
+                        "key": "key5",
+                        "status": "deleted",
+                        "value": {"k1": 1, "k2": 2}
+                    }
                 ]
         )
     ]
