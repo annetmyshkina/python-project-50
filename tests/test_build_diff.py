@@ -85,7 +85,6 @@ from gendiff.build_diff import build_diff
         )
     ]
 )
-
 def test_build_diff(data1, data2, expected):
     result = build_diff(data1, data2)
 
