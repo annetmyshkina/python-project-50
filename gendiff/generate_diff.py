@@ -20,7 +20,7 @@ def reader_file(filepath):
             raise ValueError(f'Unsupported file format {extension}')
 
 
-def generate_diff(filepath1, filepath2, format_name):
+def generate_diff(filepath1, filepath2, format_name='stylish'):
     data1 = reader_file(filepath1)
     data2 = reader_file(filepath2)
     tree_diff = build_diff(data1, data2)
