@@ -5,6 +5,7 @@ expected_path = 'tests/test_data/result_json.txt'
 with open(expected_path, 'r', encoding="utf-8") as file:
     expected = file.read().strip()
 
+
 def test_json_diff():
     data1_path = 'tests/test_data/data1.json'
     data2_path = 'tests/test_data/data2.json'
