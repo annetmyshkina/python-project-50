@@ -3,7 +3,7 @@ import os
 
 import yaml
 
-from gendiff.build_diff import build_diff
+from gendiff.formatters.build_diff import build_diff
 from gendiff.formatters.json import get_json
 from gendiff.formatters.plain import get_plain
 from gendiff.formatters.stylish import get_stylish
