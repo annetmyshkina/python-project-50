@@ -28,14 +28,14 @@ cd python-project-50
 ```
 
 ### Usage
-    gendiff -f stylish data/file1.json data/file2.json
-    gendiff -f plain data/file1.json data/file2.json
-    gendiff -f json data/file1.json data/file2.json
+    gendiff -f stylish tests/test_data/file1.json data/file2.json
+    gendiff -f plain tests/test_data/file1.json data/file2.json
+    gendiff -f json tests/test_data/file1.json data/file2.json
 
 
-    gendiff -f stylish data/YML_file1.yml data/YML_file2.yml
-    gendiff -f plain data/YML_file1.yml data/YML_file2.yml
-    gendiff -f json data/YML_file1.yml data/YML_file2.yml
+    gendiff -f stylish tests/test_data/YML_file1.yml data/YML_file2.yml
+    gendiff -f plain tests/test_data/YML_file1.yml data/YML_file2.yml
+    gendiff -f json tests/test_data/YML_file1.yml data/YML_file2.yml
 
 ### Running tests
     make test
