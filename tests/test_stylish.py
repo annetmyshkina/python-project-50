@@ -1,4 +1,4 @@
-from gendiff.generate_diff import generate_diff
+from gendiff.scripts import generate_diff
 
 
 expected_path = 'tests/test_data/result.txt'

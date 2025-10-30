@@ -1,5 +1,5 @@
 import pytest
-from gendiff.build_diff import build_diff
+from gendiff.formatters.build_diff import build_diff
 
 
 @pytest.mark.parametrize(

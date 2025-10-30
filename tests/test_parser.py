@@ -1,4 +1,4 @@
-from gendiff.parser import parser_args
+from gendiff.scripts.parser import parser_args
 
 
 def test_parser_args_basic():
